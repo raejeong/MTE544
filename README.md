@@ -20,3 +20,7 @@ Clone this repo
 - to run additional terminal 
 
 ```sudo docker exec -it mte544 bash```
+
+- for lazy, to kill all docker
+
+```sudo docker stop $(sudo docker ps -aq); sudo docker rm $(sudo docker ps -aq)```
