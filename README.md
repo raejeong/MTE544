@@ -10,16 +10,17 @@ Clone this repo
 
 ```cd MTE544```
 
-```mkdir src```
-
 # Run
-```sudo docker build . -t robotics_ws ```
 
-```sudo nvidia-docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v $(pwd)/src:/workspace --privileged --net=host --name mte544 mte544```
+```xhost +local:root ```
+
+```sudo docker build . -t mte544 ```
+
+```sudo nvidia-docker run -it --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" -v $(pwd)/workspace:/workspace --privileged --net=host --name mte544_c mte544```
 
 - to run additional terminal 
 
-```sudo docker exec -it mte544 bash```
+```sudo docker exec -it mte544_c bash```
 
 - for lazy, to kill all docker
 
